@@ -357,7 +357,7 @@ class Metar(object):
           self._year = year
       else:
           self._year = self._now.year
-      
+      self._remarks = []
       code = self.code+" "    # (the regexps all expect trailing spaces...)
       try:
           ngroup = len(Metar.handlers)
@@ -700,7 +700,7 @@ class Metar(object):
       """
       Found the start of the remarks section.
       """
-      self._remarks = []
+      pass
       
   def _handleSealvlPressRemark( self, d ):
       """

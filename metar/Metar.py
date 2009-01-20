@@ -103,7 +103,7 @@ TEMP_RE = re.compile(r"""^(?P<temp>(M|-)?\d+|//|XX|MM)/
                           (?P<dewpt>(M|-)?\d+|//|XX|MM)?\s+""",
                           re.VERBOSE)
 PRESS_RE = re.compile(r"""^(?P<unit>A|Q|QNH|SLP)?
-                           (?P<press>[\dO]{3,4}|////)
+                           (?P<press>[\dO]{3,4}|////|XXXX)
                            (?P<unit2>INS)?\s+""",
                            re.VERBOSE)
 RECENT_RE = re.compile(r"""^RE(?P<desc>MI|PR|BC|DR|BL|SH|TS|FZ)?
@@ -638,7 +638,7 @@ class Metar(object):
           press    [int]
       """
       press = d['press']
-      if press != '////':
+      if press not in  ['////', 'XXXX']:
           press = float(press.replace('O','0'))
           if d['unit']:
               if d['unit'] == 'A' or (d['unit2'] and d['unit2'] == 'INS'):

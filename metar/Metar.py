@@ -78,7 +78,7 @@ WIND_RE = re.compile(r"""^(?P<dir>[\dO]{3}|[0O]|///|MMM|VRB)
                           re.VERBOSE)
 VISIBILITY_RE =   re.compile(r"""^(?P<vis>(?P<dist>M?(\d\s*)?\d/\d\d?|M?\d+)
                                     ( \s*(?P<units>SM|KM|M|U) | 
-                                         (?P<dir>[NSEW][EW]?) )? |
+                                         (?P<dir>(([NSEW][EW]?)|NDV)) )? |
                                    CAVOK )\s+""",
                                    re.VERBOSE)
 RUNWAY_RE = re.compile(r"""^(RVRNO | 

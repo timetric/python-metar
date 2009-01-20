@@ -897,7 +897,8 @@ class Metar(object):
                      (WIND_RE, _handleTrend, False),
                      (VISIBILITY_RE, _handleTrend, True),
                      (WEATHER_RE, _handleTrend, True),
-                     (SKY_RE, _handleTrend, True) ]
+                     (SKY_RE, _handleTrend, True),
+                     (COLOR_RE, _handleTrend, False)]
 
   ## the list of patterns for the various remark groups, 
   ## paired with the handler functions to use to record the decoded remark.

@@ -35,7 +35,7 @@ in international reports are accepted."""
 
 setup(
     name="metar",
-    version="1.2.0",
+    version="1.3.0",
     author="Tom Pollard",
     author_email="pollard@alum.mit.edu",
     url="http://homepage.mac.com/wtpollard/Software/FileSharing4.html",
